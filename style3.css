@@ -1,0 +1,641 @@
+/* =====================================================
+    RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+    BODY
+===================================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #542333;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ffdce8,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #ffc6d9,
+            transparent 35%
+        ),
+        #fff5f8;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+    HIDE BACKGROUND VIDEO
+===================================================== */
+
+#backgroundMusic {
+    display: none;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.page {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 55px 0;
+}
+
+
+/* =====================================================
+    HEADER
+===================================================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    animation: fadeDown 1s ease;
+}
+
+
+.eyebrow {
+    margin-bottom: 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #b45c79;
+}
+
+
+.header h1 {
+    font-size: clamp(38px, 6vw, 65px);
+
+    line-height: 1.1;
+
+    color: #8d3152;
+}
+
+
+.header h1 span {
+    display: inline-block;
+
+    color: #f04f83;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+.subtitle {
+    margin-top: 14px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    color: #9b6375;
+}
+
+
+/* =====================================================
+    CONTENT LAYOUT
+===================================================== */
+
+.content {
+    display: grid;
+
+    grid-template-columns: 1fr 1.1fr;
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+    PHOTO GALLERY
+===================================================== */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows: repeat(2, 240px);
+
+    gap: 15px;
+
+    padding: 10px;
+}
+
+
+.photo {
+    overflow: hidden;
+
+    background: #eee;
+
+    border: 5px solid white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 35px rgba(112, 42, 68, 0.18);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.photo img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+/* =====================================================
+    PHOTO ROTATIONS
+===================================================== */
+
+.photo-1 {
+    transform: rotate(-2deg);
+}
+
+.photo-2 {
+    transform: rotate(2deg);
+}
+
+.photo-3 {
+    transform: rotate(2deg);
+}
+
+.photo-4 {
+    transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+    PHOTO HOVER
+===================================================== */
+
+.photo:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg);
+
+    box-shadow:
+        0 20px 45px rgba(112, 42, 68, 0.25);
+}
+
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+
+/*=====================================================
+    LOVE LETTER
+===================================================== */
+
+.letter {
+    position: relative;
+
+    padding: clamp(30px, 5vw, 48px);
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(112, 42, 68, 0.15);
+
+    animation: fadeUp 1s ease;
+}
+
+
+/* =====================================================
+    LETTER DECORATION
+===================================================== */
+
+.letter-decoration {
+    position: absolute;
+
+    top: 20px;
+
+    right: 28px;
+
+    color: #ff9cba;
+
+    font-size: 25px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* =====================================================
+    LETTER TITLE
+===================================================== */
+
+.letter h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(26px, 4vw, 36px);
+
+    line-height: 1.2;
+
+    color: #8d3152;
+}
+
+
+.letter h2 span {
+    color: #f04f83;
+}
+
+
+/* =====================================================
+    LETTER TEXT
+===================================================== */
+
+.letter p {
+    margin-bottom: 17px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: #694252;
+}
+
+
+/* =====================================================
+    SIGNATURE
+===================================================== */
+
+.signature {
+    margin-top: 30px;
+
+    text-align: right;
+
+    font-size: 23px;
+
+    font-style: italic;
+
+    color: #a83d61;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.footer {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+.next-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 28px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f45d8b,
+            #d93669
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(217, 54, 105, 0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.next-button span {
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.next-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(217, 54, 105, 0.4);
+}
+
+
+.next-button:hover span {
+    transform: translateX(5px);
+}
+
+
+.next-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =====================================================
+    FLOATING HEARTS
+===================================================== */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+.heart {
+    position: absolute;
+
+    bottom: -40px;
+
+    color: #ff6f9f;
+
+    font-size: 22px;
+
+    opacity: 0.55;
+
+    animation: floatHeart linear infinite;
+}
+
+
+.heart-1 {
+    left: 8%;
+
+    animation-duration: 8s;
+}
+
+
+.heart-2 {
+    left: 25%;
+
+    animation-duration: 11s;
+
+    animation-delay: 2s;
+}
+
+
+.heart-3 {
+    left: 45%;
+
+    animation-duration: 9s;
+
+    animation-delay: 1s;
+}
+
+
+.heart-4 {
+    left: 68%;
+
+    animation-duration: 12s;
+
+    animation-delay: 3s;
+}
+
+
+.heart-5 {
+    left: 88%;
+
+    animation-duration: 10s;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =====================================================
+    ANIMATIONS
+===================================================== */
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.55;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+
+/* =====================================================
+    TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .page {
+        width: 92%;
+
+        padding: 35px 0;
+    }
+
+
+    .content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .gallery {
+        grid-template-rows:
+            repeat(2, 200px);
+    }
+
+
+    .letter {
+        padding: 30px 24px;
+    }
+
+
+    .letter p {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+}
+
+
+/* =====================================================
+    MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .page {
+        width: 94%;
+    }
+
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+
+    .gallery {
+        grid-template-rows:
+            repeat(2, 150px);
+
+        gap: 9px;
+
+        padding: 5px;
+    }
+
+
+    .photo {
+        border-width: 3px;
+
+        border-radius: 17px;
+    }
+
+
+    .letter {
+        border-radius: 22px;
+
+        padding: 27px 21px;
+    }
+
+
+    .letter h2 {
+        font-size: 27px;
+    }
+
+
+    .letter p {
+        font-size: 14px;
+    }
+
+
+    .next-button {
+        padding: 13px 23px;
+    }
+
+}

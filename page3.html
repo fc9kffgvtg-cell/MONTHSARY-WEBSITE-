@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Happy 2nd Monthsary ❤️</title>
+
+    <!-- =========================================
+        CSS
+    ========================================== -->
+
+    <link rel="stylesheet" href="style3.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+        BACKGROUND MUSIC
+    ========================================== -->
+
+    <audio id="music" loop>
+
+        <source
+            src="MV2.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support audio.
+
+    </audio>
+
+
+    <!-- =========================================
+        FALLBACK MUSIC BUTTON
+        
+        This stays hidden if autoplay works.
+        If the browser blocks autoplay,
+        the button will appear.
+    ========================================== -->
+
+    <button
+        id="musicButton"
+        style="display: none;"
+    >
+        🎵 Play Our Song
+    </button>
+
+
+    <!-- =========================================
+        FLOATING HEARTS
+    ========================================== -->
+
+    <div class="hearts">
+
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+
+    </div>
+
+
+    <!-- =========================================
+        MAIN CONTENT
+    ========================================== -->
+
+    <main class="page">
+
+
+        <!-- =====================================
+            HEADER
+        ====================================== -->
+
+        <header class="header">
+
+            <p class="eyebrow">
+                OUR LITTLE LOVE STORY
+            </p>
+
+
+            <h1>
+
+                Happy 2nd Monthsary
+
+                <span>♥</span>
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                Two months officially, but a lifetime
+                of memories already.
+
+            </p>
+
+        </header>
+
+
+
+        <!-- =====================================
+            CONTENT
+        ====================================== -->
+
+        <section class="content">
+
+
+            <!-- =================================
+                PHOTO GALLERY
+            ================================== -->
+
+            <div class="gallery">
+
+
+                <div class="photo">
+
+                    <img
+                        src="photo6.jpg"
+                        alt="Our memory"
+                    >
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="photo7.jpg"
+                        alt="Our memory"
+                    >
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="photo8.jpg"
+                        alt="Our memory"
+                    >
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img
+                        src="photo5.jpg"
+                        alt="Our memory"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                LOVE LETTER
+            ================================== -->
+
+            <article class="letter">
+
+
+                <div class="heart-decoration">
+                    ♥
+                </div>
+
+
+                <h2>
+
+                    To my
+                    <span>favorite person</span>
+                    ❤️
+
+                </h2>
+
+
+                <p>
+
+                    Hi, Babe. Happy 2nd monthsary to us!
+
+                    It's crazy to think that we've only been
+                    officially together for two months, yet we've
+                    already shared so many incredible memories.
+
+                </p>
+
+
+                <p>
+
+                    These past two years weren't always perfect,
+                    but every laugh, every late-night conversation,
+                    every misunderstanding we overcame, and every
+                    memory we created has brought us here.
+
+                </p>
+
+
+                <p>
+
+                    I finally get to call you mine, and that is
+                    something I will always be grateful for.
+
+                    I never imagined I'd find someone who could
+                    make ordinary moments feel so special.
+
+                </p>
+
+
+                <p>
+
+                    Thank you for being patient with me, for
+                    understanding me even when I'm hard to understand,
+                    and for making me smile on my worst days.
+
+                </p>
+
+
+                <p>
+
+                    Thank you for choosing me every single day.
+
+                    I promise to keep choosing you too — supporting
+                    your dreams, listening to you, and standing beside
+                    you no matter what challenges come our way.
+
+                </p>
+
+
+                <p>
+
+                    I hope this is only the beginning of our story.
+
+                    I can't wait to make more memories, visit new
+                    places, laugh until our stomachs hurt, and build
+                    a future filled with love and happiness.
+
+                </p>
+
+
+                <p>
+
+                    Happy 2nd monthsary, my love.
+
+                    Thank you for making these past two years special
+                    and these last two months the happiest chapter
+                    of my life.
+
+                </p>
+
+
+                <div class="signature">
+
+                    I love you more than words can express. ❤️
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+            NEXT BUTTON
+        ========================================== -->
+
+        <div class="footer">
+
+            <a
+                href="page4.html"
+                class="next-button"
+            >
+
+                Continue our story →
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+        MUSIC SCRIPT
+    ========================================== -->
+
+    <script>
+
+        // Get music element
+        const music =
+            document.getElementById("music");
+
+
+        // Get fallback button
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        // Set volume
+        music.volume = 0.5;
+
+
+
+        // =========================================
+        // CHECK IF HTML2 TOLD US TO PLAY MUSIC
+        // =========================================
+
+        const shouldPlay =
+            sessionStorage.getItem("playMV2");
+
+
+        // =========================================
+        // TRY AUTOPLAY WHEN PAGE3 LOADS
+        // =========================================
+
+        window.addEventListener("load", function () {
+
+
+            if (shouldPlay === "true") {
+
+
+                music.play()
+
+                    .then(function () {
+
+                        // Music successfully started
+                        console.log(
+                            "❤️ MV2.mp3 is playing!"
+                        );
+
+
+                        // Hide fallback button
+                        musicButton.style.display =
+                            "none";
+
+
+                        // Remove the signal
+                        sessionStorage.removeItem(
+                            "playMV2"
+                        );
+
+                    })
+
+
+                    .catch(function () {
+
+                        // Browser blocked autoplay
+                        console.log(
+                            "Autoplay blocked by browser."
+                        );
+
+
+                        /*
+                         * Show the music button.
+                         */
+                        musicButton.style.display =
+                            "block";
+
+
+                    });
+
+            }
+
+        });
+
+
+
+        // =========================================
+        // MUSIC BUTTON
+        // =========================================
+
+        musicButton.addEventListener(
+            "click",
+            function () {
+
+
+                music.play()
+
+                    .then(function () {
+
+                        console.log(
+                            "❤️ Music started!"
+                        );
+
+
+                        // Hide button
+                        musicButton.style.display =
+                            "none";
+
+
+                    })
+
+                    .catch(function (error) {
+
+                        console.log(
+                            "Music error:",
+                            error
+                        );
+
+                    });
+
+            }
+        );
+
+
+
+        // =========================================
+        // CLICK ANYWHERE FALLBACK
+        // =========================================
+
+        document.addEventListener(
+            "click",
+            function startMusic() {
+
+
+                if (music.paused) {
+
+
+                    music.play()
+
+                        .then(function () {
+
+                            console.log(
+                                "❤️ Music started after click!"
+                            );
+
+
+                            /*
+                             * Remove the event listener
+                             * after music successfully starts.
+                             */
+
+                            document.removeEventListener(
+                                "click",
+                                startMusic
+                            );
+
+
+                            // Hide button
+                            musicButton.style.display =
+                                "none";
+
+                        })
+
+                        .catch(function () {
+
+                            console.log(
+                                "Waiting for user interaction..."
+                            );
+
+                        });
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
